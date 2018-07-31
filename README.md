@@ -8,10 +8,6 @@
 | Projeto | Projeto migração do Modal Controle |
 | Tecnologia Front-end | Angular 5.2.2 |
 | Tecnologia Back-end | CUBO |
-| Código TFS | MCV2 |
-| URL Repositório | https://celular.visualstudio.com/projeto.Vivo.ModalControleV2 |
-| URL Homologação | - |
-| URL Produção | - |
 
 ## Informações importantes ( ao desenvolvedor )
 * Mantenha os testes unitário e end-to-end em dia
