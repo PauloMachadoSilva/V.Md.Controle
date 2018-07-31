@@ -1,0 +1,23 @@
+{
+    "new_line": {
+        "title": "Parabéns!<br>Sua solicitação da nova linha Vivo com o plano Controle {NET_SIZE} foi recebida com sucesso.",
+        "text1": "<b>O que acontece agora?</b> Seu pedido está passando por uma análise de crédito e, assim que for aprovado, enviaremos seu novo chip. Assim que receber seu chip, ativaremos sua nova linha.",
+        "text2": "",
+        "image": "../../../assets/img/group-4-steps.png",
+        "dateList": [0, 3, 6, 9]
+    },
+    "transfer": {
+        "title": "Parabéns!<br>Sua Solicitação de Portabilidade para Vivo no plano Controle {NET_SIZE} foi recebida com sucesso.",
+        "text1": "<b>O que acontece agora?</b> Seu pedido está passando por uma análise de crédito e assim que for aprovado, enviaremos seu novo chip que será ativado na data agendada.",
+        "text2": "<b>Importante:</b> Você não precisa fazer mais nada. Nosso sistema fará automaticamente a mudança da sua linha para a Vivo, mantendo seu número atual.",
+        "image": "../../../assets/img/group-5-steps.png", 
+        "dateList": [0, 3, 6, 9, 12]
+    },
+    "migrate": {
+        "title": "Parabéns!<br>Sua solicitação de mudança para o plano Vivo Controle {NET_SIZE} foi recebida com sucesso.",
+        "text1": "Seu pedido está passando por uma análise de crédito e em instantes você receberá um email do nosso Agente Oficial Celular Direto informando o status da sua solicitação. Assim que seu novo plano for ativado em sua linha {PHONE_NUMBER}, você será notificado por email e SMS e poderá usufruir de todos os benefícios do seu novo plano.",
+        "text2": "",
+        "image": null,
+        "dateList": []
+    }
+}

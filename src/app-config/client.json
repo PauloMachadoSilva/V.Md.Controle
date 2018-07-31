@@ -1,0 +1,31 @@
+{
+    "name": "vivo",
+    "title": "Vivo Controle",
+    "seller": "migracao.vivo",
+    "code": "15",
+    "defaultState": "RJ",
+
+    "plans": {
+        "productId": 10,
+        "modality": 1
+    },
+
+    "google": {
+        "gtm": "GTM-W256FPX"
+    },
+
+    "chat": {
+        "license": 4714731,
+        "groupId": 68,
+        "greeting": "operadora",
+        "utmSource": "vivo"
+    },
+
+    "_documentation": [
+        "client.plans.modality:",
+        "    1: Migracao",
+        "    2: Portabilidade",
+        "    3: NovaLinha",
+        "    4: Upgrade"
+    ]
+}

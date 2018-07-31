@@ -1,0 +1,43 @@
+@import '../../../assets/styles/tools/mixins'
+
+.content
+    &.-search
+        .link
+            color: #660099
+            display: block
+            font-size: 14px
+            font-weight: bold
+
+        .search-result
+            font-size: 12px
+            margin-left: 8%
+            width: 92%
+            +mq('tablet','max')
+                margin: 0
+                width: 100%
+            > span
+                display: block
+                margin-bottom: 9px
+            .list-result
+                height: 216px
+                overflow-y: scroll
+                overflow-x: hidden
+                .iten-result
+                    border: solid 1px #d2d2d2
+                    display: flex
+                    margin-bottom: 8px
+                    padding: 10px 15px
+                    font-size: 12px
+                    width: 98%
+                    .street-containt
+                        flex: 2
+                    .select-street
+                        flex: 0.5
+                        > a
+                            display: block
+                            margin-top: 17%
+
+        .prev
+            margin: 10% 0 0 50%
+            +mq('tablet','max')
+                margin-left: 42%

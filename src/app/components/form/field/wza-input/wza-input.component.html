@@ -1,0 +1,50 @@
+<!-- 
+    Docs
+    - autocomplete="off"  caso precise desligar o auto complete
+-->
+<div class="field-group {{groupClass}}">
+    <wza-label
+        [id]="id || field.name"
+        [field]="field"
+        [type]="type"
+        [label]="label"
+        [placeholder]="placeholder"
+        [hasIcon]="hasIcon"
+        [class]="class"
+        [groupClass]="groupClass"
+        [formGroup]="field.parent"
+    >
+        <input *ngIf="!field.mask"
+            class="field"
+            autocomplete="off"
+            [type]="type"
+            [id]="id || field.name"
+            [formControlName]="field.name"
+            [value]="field.value"
+            [readonly]="field.readonly"
+            [maxlength]="maxLength || ''"
+            [minlength]="minLength || ''"
+            [ngClass]="{ 'errorenabled': field.enableCssError }"
+            (keydown)="field.enableCssError = true"
+            (focus)="field.focus = true"
+            (blur)="field.focus = false; onBlur($event)"
+        >
+
+        <input *ngIf="field.mask"
+            class="field"
+            autocomplete="off"
+            [type]="type"
+            [id]="id || field.name"
+            [formControlName]="field.name"
+            [readonly]="field.readonly"
+            [mask]="field.mask"
+            dropSpecialCharacters="false"
+            [maxlength]="maxLength || ''"
+            [minlength]="minLength || ''"
+            [ngClass]="{ 'errorenabled': field.enableCssError }"
+            (keydown)="field.enableCssError = true"
+            (focus)="field.focus = true"
+            (blur)="field.focus = false; onBlur($event)"
+        >
+    </wza-label>
+</div>

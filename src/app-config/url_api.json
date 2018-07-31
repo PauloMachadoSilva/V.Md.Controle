@@ -1,0 +1,30 @@
+{
+    "STATE_SERVICE_GET_STATES":             { "hasOrigin": true, "spinner": "all",  "url": "endereco/listar/UFs/ddds" },
+    "PLANS_SERVICE_PLAN_BY_DDD_LIST":       { "hasOrigin": true, "spinner": "all",  "url": "produto/Origem/listar/planos/porddd" },
+    "PLANS_SERVICE_PLAN_BY_SKU":            { "hasOrigin": true, "spinner": "all",  "url": "produto/sku/obter/PorCodigoSku" },
+    "PLANS_SERVICE_PLAN_BY_SKU_UF_DDD":     { "hasOrigin": true, "spinner": "all",  "url": "vivo/controlemodal/obter/plano" },
+    "PERSONAL_DATA_GET_DATA_BY_CPF":        { "hasOrigin": true, "spinner": { "id": "label-cpf" },  "url": "info/pessoafisica/obterDados" },
+    "ADDRESS_SERVICE_GET_ADDRESS_BY_CEP":   { "hasOrigin": true, "spinner": { "id": "label-cep" },  "url": "endereco/obter/porcep" },
+    "ADDRESS_SERVICE_FIND_ADDRESS":         { "hasOrigin": true, "spinner": { "id": "label-address" },  "url": "endereco/listar/porendereco" },
+    "METRICS_SERVICE_SEND_UID":             { "hasOrigin": true, "spinner": "all",  "url": "carrinho/log/analitico" },
+
+    "SMS_SERVICE_CONFIRMATION":             { "hasOrigin": true, "spinner": "all",  "url": "vivo/controlemodal/confirmarsms" },
+    "SMS_SERVICE_RESEND":                   { "hasOrigin": true, "spinner": "all",  "url": "vivo/controlemodal/reenviarsms" },
+
+    "CART_MAKE_A_CART":                     { "hasOrigin": true, "spinner": false,  "url": "vivo/controlemodal/carrinho" },
+    "CART_FINISH":                          { "hasOrigin": true, "spinner": "all",  "url": "vivo/controlemodal/finalizar/pedido" },
+    "CART_ANALYTICS_PHONE":                 { "hasOrigin": false, "spinner": { "id": "label-cellPhone" }, "url": "vivo/controlemodal/dadospessoais/telefone" },
+    "CART_ANALYTICS_CPF":                   { "hasOrigin": false, "spinner": { "id": "label-cpf" }, "url": "vivo/controlemodal/dadospessoais/cpf" },
+    "CART_ANALYTICS_NAME":                  { "hasOrigin": false, "spinner": { "id": "label-name" }, "url": "vivo/controlemodal/dadospessoais/nome" },
+    "CART_ANALYTICS_MOTHER_NAME":           { "hasOrigin": false, "spinner": { "id": "label-motherName" }, "url": "vivo/controlemodal/dadospessoais/nomeMae" },
+    "CART_ANALYTICS_BIRTHDATE":             { "hasOrigin": false, "spinner": { "id": "label-birth" }, "url": "vivo/controlemodal/dadospessoais/datanascimento" },
+    "CART_ANALYTICS_EMAIL":                 { "hasOrigin": false, "spinner": { "id": "label-email" }, "url": "vivo/controlemodal/dadospessoais/email" },
+    "CART_ANALYTICS_CEP":                   { "hasOrigin": false, "spinner": { "id": "label-cep" }, "url": "vivo/controlemodal/endereco/cep" },
+    "CART_ANALYTICS_NUMBER":                { "hasOrigin": false, "spinner": false, "url": "vivo/controlemodal/endereco/numero" },
+    "CART_ANALYTICS_COMPLEMENT":            { "hasOrigin": false, "spinner": false, "url": "vivo/controlemodal/endereco/complemento" },
+    "CART_ANALYTICS_NEIGHBORHOOD":          { "hasOrigin": false, "spinner": false, "url": "vivo/controlemodal/endereco/bairro" },
+    "CART_ANALYTICS_STREET":                { "hasOrigin": false, "spinner": false, "url": "vivo/controlemodal/endereco/logradouro" },
+    "CART_ANALYTICS_MATURITY":              { "hasOrigin": false, "spinner": false, "url": "vivo/controlemodal/endereco/vencimento" },
+    "CART_ANALYTICS_ACCOUNT_TYPE":          { "hasOrigin": false, "spinner": false, "url": "vivo/controlemodal/endereco/tipoconta" },
+    "CART_ANALYTICS_RESUME":                { "hasOrigin": false, "spinner": false, "url": "carrinho/obter/pedido/retomada" }
+}

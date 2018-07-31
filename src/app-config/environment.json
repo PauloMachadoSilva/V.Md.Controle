@@ -1,0 +1,31 @@
+{
+    "dev": {
+        "domain": "//esb.webapidev.cd.com/vivo/v1/api/",
+        "origin": "51591be7229b424ab298d753513016dd",
+        "auth":   "9ec365a9a6664414ac8927b1bda4744c"
+    },
+
+    "hmg": {
+        "domain": "//esb.webapihmg.cd.com/vivo/v1/api/",
+        "origin": "51591be7229b424ab298d753513016dd",
+        "auth":   "c787dc81a50b467ca19d9eba7572c684"
+    },
+
+    "prd": {
+        "domain": "https://gtw.celular.com.br/{TO BE DEFINED}",
+        "origin": "51591be7229b424ab298d753513016dd",
+        "auth":   "c325452a3cf7473e85d375faca1ee812"
+    },
+
+    "temporarily_replace": {
+        "hmg": {
+            "domain": "http://gtw-hmg-interno.celular.com.br:8090/vivo/v1/api/",
+            "origin": "51591be7229b424ab298d753513016dd",
+            "auth":   "c787dc81a50b467ca19d9eba7572c684"
+        }
+    },
+
+    "_documentation": [
+        "temporarily_replace: Criado para gerar substituições momentâneas da versão original de configuração"
+    ]
+}

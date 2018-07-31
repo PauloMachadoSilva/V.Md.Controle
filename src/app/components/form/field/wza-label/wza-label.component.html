@@ -1,0 +1,22 @@
+<div class="input-field {{ class }}" [ngClass]="{ '-down': !field.focus && (field.value == '' || field.value == null) }">
+    <label class="field-container {{ class }}" >
+        <i class="icon -{{ field.name }}" *ngIf="hasIcon"></i>
+        <label class="label" [ngClass]="{ 'error': field.enableCssError && field.errors != null }" *ngIf="label" >{{ field.focus || field.value != '' && field.value != null ? label : placeholder }}</label>
+
+        <ng-content></ng-content>
+        <div class="validation-icons" [ngClass]="{'error': field.enableCssError && field.errors != null,'valid': field.enableCssError && field.errors==null}"></div>
+
+        <!-- Default angular validators -->
+        <p class="error" *ngIf="field.enableCssError && field.errors?.required">Este campo é obrigatório</p> 
+        <p class="error" *ngIf="field.enableCssError && field.errors?.email && !field.errors?.required">E-mail inválido</p>
+
+        <!-- Custom validators -->
+        <p class="error" *ngIf="field.enableCssError && !field.valid && !field.errors?.required">{{ field.errorMessage || field.errors?.message }}</p>
+    </label>
+    <div class="" id="label-{{id}}">
+        <div class="progress-bar">
+            <div class="line"></div>
+        </div>
+    </div>
+    <form-debug type="field" [element]="field"></form-debug>
+</div>

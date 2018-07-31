@@ -1,0 +1,63 @@
+.modal-uf
+    .title-ddd
+        margin: 20px auto
+        padding-left: 60px
+        position: relative
+        width: 75%
+        
+        &:before
+            background-image: url(/assets/img/location.png)
+            background-repeat: no-repeat
+            background-size: cover
+            content: ''
+            display: block
+            height: 84.6px
+            left: -21px
+            position: absolute
+            top: -15px
+            width: 58.5px
+            
+
+            
+
+    .form-ddd-selector
+        margin-top: 30px
+        > div
+            height: 62px
+            margin: 10px 0
+            
+        .form-wrapper
+            clear: both
+
+            > button
+                background: #ff9801 url(../img/seta-botao.png) no-repeat 30px 10px
+                margin-top: 20px
+                width: 100%
+
++mq('phone-wide', 'min')
+    .modal-uf
+        left: -40px
+        margin: 100px auto 0
+        position: relative
+
+        .title-ddd
+            margin: 0 auto
+            width: 353px
+
+        .form-ddd-selector
+            left: 62px
+            margin: 0 auto
+            position: relative
+            width: 353px
+            top: -10px
+
+            > div
+                margin: 28px 0
+            .field-state
+                float: left
+                width: 260px
+            .field-ddd
+                float: right
+                width: 69px
+            .form-wrapper
+                max-width: 195px

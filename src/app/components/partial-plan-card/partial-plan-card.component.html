@@ -1,0 +1,33 @@
+<div class="plan-card">
+    <div class="plan-title">
+        <h4 class="text-center plan-title-text">{{ plan.complement.internetValue }}</h4>
+        <p class="text-center plan-subtitle-text">{{ plan.complement.internetDetail }}</p>
+    </div>
+    <span class="line"></span>
+    <p class="plan-info-featured">
+        <span class="text-center text-featured">{{ plan.description.calls.title }}</span>
+        <span class="text-center text-normal">{{ plan.description.calls.description }}</span>
+    </p>
+    <div class="plan-info">
+        <p class="text-center">Apps de conteúdo exclusivo</p>
+        <p class="text-center">{{ plan.description.sva.description }}</p>
+        <!-- <ul>
+            <li class="text-center" *ngFor="let item of appContentList">{{ item }}</li>
+        </ul> -->
+    </div>
+    <div class="plan-footer">
+        <div class="plan-price">
+            <span class="plan-price-symbol">R$</span>
+            <span class="plan-price-real text-featured">{{plan.price.split(',')[0]}}</span>
+            <span class="plan-price-cents text-featured">,{{plan.price.split(',')[1]}}</span>
+            <span class="plan-price-text">/mês</span>
+        </div>
+        <button class="button button-alternative -normal" (click)="onSubmit(plan.skuCode)">Contratar</button>
+        <div class="plan-more-details">
+            <p (click)='showDetails = !showDetails'>+ Detalhes</p>
+            <ul class="items-more-details" [hidden]='!showDetails'>
+                <li class="item-more-details" *ngFor='let value of detailList'> <span>{{ value }}</span></li>
+            </ul>
+        </div>
+    </div>
+</div>

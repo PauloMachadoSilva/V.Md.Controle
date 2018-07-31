@@ -1,0 +1,28 @@
+.button
+    border: none
+    +border-radius(3px)
+    font-size: 18px
+    display: block
+    cursor: pointer
+    display: flex
+    align-items: center
+    justify-content: center
+
+    +buttons(default, $background-default)
+    +buttons(alternative, $yellow)
+        
+    
+    &.-normal
+        width: 195px
+        height: 45px
+
+    &.-small
+        width: 30%
+        height: 45px
+
+    &.-large
+        width: 100%
+
+    &.-square
+        width: 20px
+        height: 20px

@@ -1,0 +1,27 @@
+
+<div class="modal__containerFaq">
+    <partial-spinner></partial-spinner>
+    <faq></faq>
+    <section class="modal">
+        <header class="header">
+            <div class="title">
+                <img src="assets/img/vivo-controle.png" alt="{{title}}" class="img-logo">
+            </div>
+
+            <img src="assets/img/bt-fechar.png" alt="fechar" title="fechar" class="vivoPosModal__close" onclick="top.postMessage('click!', '*'); window.close();">
+
+        </header>
+
+        <div class="-content">
+            <div class="-main">
+                <partial-breadcrumb [data]="breadcrumbData"></partial-breadcrumb>
+                <ng-content></ng-content>
+            </div>
+            <partial-sidebar class="-sidebar" *ngIf="hasSidebar"></partial-sidebar>
+        </div>
+
+    </section>
+    <footer class="footer-logo">
+    </footer>
+</div>
+

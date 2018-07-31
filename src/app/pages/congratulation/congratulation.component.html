@@ -1,0 +1,69 @@
+<div class="content -congratulations">
+    <h2 class="title-parabens" [innerHTML]="congratulationData.title"></h2>
+    <div class="separator"></div>
+    <div class="happens-now">
+        <p [innerHTML]="congratulationData.text1" class="happens-now-text">
+        </p>
+    </div>
+
+    <div class="breadcrumbs-date-container breadcrumb-steps{{ congratulationTemplateType }}" *ngIf="congratulationData.image">
+        <ul class="date-list" *ngIf="congratulationData.dateList">
+            <li *ngFor="let date of congratulationData.dateList" class="text-step-date{{ congratulationTemplateType }}" [innerHTML]="date">
+            </li>
+        </ul>
+    </div>
+ 
+    <div *ngIf="congratulationData.text2" class="container-congratulation-importante">
+        <p [innerHTML]="congratulationData.text2" class="text-congratulation-importante">
+        </p>
+    </div>
+
+    <div class="border-btn-submit">
+
+        <p id="order-code-box">
+
+            <span id="order-code">Código do Pedido:</span>
+
+            <span id="order-code-number">{{ congratulationData.code }}</span>
+
+        </p>
+
+        <div id="order-box-separator"></div>
+        <div id="order-details-box">
+
+            <ul class="order-details-block-left">
+                <li>
+                    <span class="order-details-titles">Nome: </span>
+                    <span class="order-details-data"> {{congratulationData.nameClient}} </span>
+                </li>
+                <li>
+                    <span class="order-details-titles">Plano:</span>
+                    <span class="order-details-data"> {{congratulationData.planName}}</span>
+                </li>
+                <li>
+                    <span id="due-date">Vencimento dia {{congratulationData.dueDate}} de cada Mês</span>
+                </li>
+            </ul>
+
+            <ul class="order-details-block-right">
+                <li>
+                    <span class="order-details-titles">CPF:</span>
+                    <span class="order-details-data"> {{congratulationData.cpfClient}} </span>
+                </li>
+                <li>
+                    <span class="order-details-titles">Valor:</span>
+                    <span class="order-details-data">R$ {{congratulationData.planValue}} /mês</span>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <button type="submit" (click)="closeModal()" class="btn-submit">
+
+        <span>Fechar</span>
+
+    </button>
+
+</div>
+<!-- [disabled]="!addressForm.valid" -->

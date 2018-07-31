@@ -1,0 +1,17 @@
+<wza-label 
+    [id]="id || field.name"
+    [field]="field"
+    [type]="type" 
+    [label]="label"
+    [hasIcon]="hasIcon"
+    [class]="class"
+        
+    [formGroup]="field.parent"
+>
+    <select [formControlName]="field.name" [id]="id || field.name" class="select">
+        <option *ngFor="let option of field.itens" 
+                [value]="option.value" 
+                [disabled]="option.disabled"
+        >{{ option.title }}</option>
+    </select>
+</wza-label>

@@ -1,0 +1,185 @@
+.-sidebar
+    background: #f6f6f6
+    border-bottom-right-radius: 10px
+    flex: 1
+    position: relative
+
+    .sidebar-header
+        &.-mobile
+            align-items: center
+            background-color: #660099
+            border-bottom: 1px solid #fff
+            color: #fff
+            display: none
+            font-size: 26px
+            height: 40px
+            justify-content: space-around
+            position: absolute
+            top: 0
+            width: 100%
+            +mq('tablet','max')
+                display: flex
+
+            .logo
+                background-image:  url('/assets/img/logo-vivocontrolegiga.png')
+                background-position: center center
+                background-repeat: no-repeat
+                background-size: cover
+                content: ''
+                display: inline-block
+                height: 36px
+                width: 72px
+
+            .details
+                background-image:  url('/assets/img/mais-detalhes.png')
+                background-position: center center
+                background-repeat: no-repeat
+                background-size: cover
+                content: ''
+                display: inline-block
+                height: 28px
+                width: 22px
+
+    .sidebar-content
+        +mq('tablet','max')
+            display: none
+            margin-bottom: -40px
+            &.-active
+                display: block
+                margin-top: 40px
+
+        .sidebar-header
+            background: $purple
+            color: $white
+            > h1
+                border-bottom: 2px solid #8607c2
+                font-size: 16px
+                height: 62px
+                padding-top: 20px
+                text-align: center
+                +mq('tablet','max')
+                    height: 26px
+                    font-size: 12px
+                    padding-top: 5px
+            > p
+                border-bottom: 2px solid #8607c2
+                font-size: 14px
+                height: 40px
+                line-height: 40px
+                text-align: center
+
+            .sidebar-info-plan
+                +mq('tablet','max')
+                    align-items: center
+                    display: flex
+                    flex-direction: row
+                    height: 66px
+                    justify-content: space-between
+                    padding: 0 33px
+
+                .plan-title
+                    padding-bottom: 10px
+
+                    .plan-title-text
+                        font-size: 40px
+
+                    .plan-subtitle-text
+                        font-size: 15px
+                        margin-top: -10px
+
+                .line
+                    +mq('tablet','max')
+                        content: ''
+                        background-color: #ffffff
+                        width: 1px
+                        height: 50px
+
+                .plan-info-featured
+                    margin-top: -3px
+                    padding-top: 10px
+                    padding-bottom: 20px
+
+                    > span
+                        display: block
+
+                    .text-center.text-featured
+                        font-size: 16px
+
+                    .text-center.text-normal
+                        font-size: 12px
+
+            .plan-apps
+                background: darken(#670097, 15%)
+                height: 64px
+                display: flex
+                flex-direction: column
+                align-items: center
+                justify-content: center
+
+                > p
+                    font-size: 12px
+                .apps
+                    font-weight: bold
+                    font-size: 16px
+                    text-align: center
+    .sidebar-footer
+        background: $light-gray
+        border-bottom-right-radius: 10px
+        .plan-more-details
+            align-items: center
+            border-bottom-right-radius: 10px
+            border-top: 1px solid darken(#f6f6f6, 15%)
+            display: flex
+            flex-direction: column
+            justify-content: center
+            line-height: 40px
+            text-align: center
+            > p
+                color: $purple
+
+            .items-more-details
+                list-style: none
+                border-bottom-right-radius: 10px
+                .item-more-details
+                    font-size: 14px
+                    line-height: 15px
+                    margin: 10px 0
+                    padding: 10px 10px 10px 30px
+                    text-align: left
+                    color: $dark-gray
+                    background: url(../img/checked.png) no-repeat 10px 13px
+                    width: 230.4px
+                    +mq('tablet','max')
+                        width: 100%
+
+            .plan-price
+                position: relative
+                text-align: center
+                width: 128px
+                height: 60px
+                color: #660099
+                margin: 0 auto
+                .plan-price-symbol
+                    font-size: 18px
+                    margin-top: 10px
+                    display: block
+                    float: left
+                .plan-price-real
+                    font-size: 50px
+                    display: block
+                    float: left
+                    margin-top: 20px
+                .plan-price-cents
+                    font-size: 25px
+                    margin-top: 7px
+                    display: block
+                    float: left
+                .plan-price-text
+                    position: relative
+                    top: -20px
+                    display: block
+                    text-align: right
+
+                    // float: left
+                    // margin-left: -30px
+                    // margin-top: 30px

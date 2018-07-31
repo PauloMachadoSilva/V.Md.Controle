@@ -1,0 +1,20 @@
+<div class="element-debug" *ngIf="element && isDebug">
+    
+    <!-- form -->
+    <div *ngIf="type == 'form'">
+        <h3>Form debug</h3>
+        <pre>Valid form: {{ element?.valid }}</pre>
+        <pre>Submitted: {{ element?.submitted }}</pre>
+        <pre>Values: {{ element?.value | json }}</pre>
+    </div>
+    
+    <!-- field -->
+    <div *ngIf="type == 'field'">
+            <h3>Input debug</h3>
+        
+            <pre>Value: {{ element.value }}</pre>
+            <pre>Valid form: {{ element.valid }}</pre>
+            <pre>Class: {{ element.className }}</pre>
+            <pre>Error: {{ element.errors | json }}</pre>
+    </div>
+</div>

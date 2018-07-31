@@ -1,0 +1,137 @@
+<div class="content -adress">
+    <h2 class="title">{{ clientName }}, confirme seu endereço.</h2>
+    <p class="sub-title">Você receberá neste endereço a fatura do seu novo plano</p>
+
+    <form [formGroup]="addressForm" (ngSubmit)="onSubmit()" class="form -address">
+        <wza-input
+            type="text"
+            groupClass=""
+            class="-icon -cep"
+            label="Seu CEP"
+            placeholder="Digite o seu CEP"
+            [field]="addressForm.field('cep')"
+            (keydown)="onKeyupCep(false)"
+            (blur)="onKeyupCep(true)"
+            maxLength="9"
+            minLength="9"
+            >
+
+        </wza-input>
+
+        <a routerLink="/buscar_endereco"
+            class="search-cep address-details"
+            *ngIf="!addressForm.field('cep').valid || !cepLoaded"
+        >Não sabe seu CEP?</a>
+        <div class="address-details" *ngIf="addressForm.field('cep').valid && cepLoaded && isCompleteAddress">
+            <p>{{ addressForm.fieldValue('street') }} - {{ addressForm.fieldValue('neighborhood') }}</p>
+            <p>{{ addressForm.fieldValue('city') }} - {{ addressForm.fieldValue('state') }}</p>
+        </div>
+        <div *ngIf="!isCompleteAddress && addressForm.field('cep').valid && cepLoaded" class="address-details">
+            <p>{{ addressForm.fieldValue('city') }} - {{ addressForm.fieldValue('state') }}</p>
+        </div>
+
+        <div [class.hidden]="!cepLoaded || isCompleteAddress && addressForm.field('cep').valid" class="extra-field">
+            <wza-input
+                type="text"
+                label="Sua Rua"
+                class="-icon"
+                groupClass="-half"
+                placeholder="Digite sua rua"
+                [field]="addressForm.field('street')"
+                (keydown)="updateAnalytics('street')"
+                (blur)="updateAnalytics('street', true)"
+                maxLength="150"
+                minLength="3"
+            ></wza-input>
+
+            <wza-input
+                type="text"
+                label="Seu Bairro"
+                class="-icon"
+                groupClass="-half"
+                placeholder="Digite seu bairro"
+                [field]="addressForm.field('neighborhood')"
+                (keydown)="updateAnalytics('neighborhood')"
+                (blur)="updateAnalytics('neighborhood', true)"
+                maxLength="50"
+                minLength="3"
+            ></wza-input>
+        </div>
+
+
+        <div class="double"
+            [class.hidden]="!cepLoaded"
+        >
+            <wza-input
+                type="text"
+                label="Número"
+                groupClass="-half"
+                class=" -icon "
+                placeholder="Digite o seu número"
+                [field]="addressForm.field('number')"
+                (keyup)="updateAnalytics('number')"
+                (blur)="updateAnalytics('neighborhood', true)"
+                maxLength="10"
+                minLength="1"
+            ></wza-input>
+
+            <wza-input
+                type="text"
+                label="Complemento"
+                groupClass="-half"
+                class=" -icon"
+                placeholder="Digite o seu complemento"
+                [field]="addressForm.field('complement')"
+                (keyup)="updateAnalytics('complement')"
+                (blur)="updateAnalytics('complement', true)"
+                maxLength="20"
+            ></wza-input>
+        </div>
+
+        <div class="field-group" [class.hidden]="!addressForm.field('number').valid">
+            <div class="input-field -icon -maturity">
+                <label for="" class="label">Confirme o dia do pagamento</label>
+                <div class="radio-group">
+                    <ng-container *ngFor="let maturityItem of maturityList">
+                        <input type="radio" id="vencimento{{ maturityItem.day }}" formControlName="maturity" value="{{ maturityItem.day }}" class="radio-button"> <label for="vencimento{{ maturityItem.day }}">{{ maturityItem.day }}</label>
+                    </ng-container>
+                </div>
+            </div>
+        </div>
+
+        <div class="field-group -account-type" [class.hidden]="!addressForm.field('number').valid">
+            <div class="input-field -icon -account-type">
+                <label for="" class="label">Tipo de conta</label>
+                <div class="radio-group">
+                    <input type="radio" id="tipoconta-digital" formControlName="accountType" value="digital" class="radio-button" (change)="updateAnalytics('accountType', true)"> <label for="tipoconta-digital">Digital <span>(receba a conta por e-mail e ganhe <span class="strong">500MB de internet todo mês</span>)</span></label>
+                </div>
+
+                <div class="input-field -term -icon">
+                    <div class="checkbox-group">
+                        <input type="checkbox" formControlName="agreementDigital" id="contratoDigital" class="checkbox-button"> <label class="first" for="contratoDigital">Declaro que li e aceito <a href="/assets/document/termos.pdf" target="_BLANK">os termos de ativação</a> da Conta Digital.</label>
+                    </div>
+                </div>
+
+                <div class="radio-group">
+                    <input type="radio" id="tipoconta-printed" formControlName="accountType" value="impressa" class="radio-button" (change)="updateAnalytics('accountType', true)"> <label for="tipoconta-printed">Impressa <span>(receber a conta através dos correios)</span></label>
+                </div>
+            </div>
+        </div>
+
+        <div class="field-group" [class.hidden]="!addressForm.field('number').valid">
+            <div class="input-field -term -icon">
+                <div class="checkbox-group">
+                    <input type="checkbox" formControlName="agreement" id="contrato" class="checkbox-button"> <label class="first" for="contrato">Declaro que conheço e concordo com as <a href="/assets/document/termos.pdf" target="_BLANK"> Cláusulas Gerais do Contrato de Prestação de Serviço Móvel Pessoal Pós-Pago. (Clique aqui para ver o contrato)</a></label>
+                </div>
+            </div>
+        </div>
+
+        <div class="field-group" [class.hidden]="!addressForm.field('number').valid">
+            <div class="input-field -submit -icon">
+                <button type="submit" [disabled]="!addressForm.valid || !addressForm.field('agreement').value" class="btn-submit"><span> Finalizar</span></button>
+            </div>
+        </div>
+    </form>
+
+    <form-debug [element]="addressForm"></form-debug>
+</div>

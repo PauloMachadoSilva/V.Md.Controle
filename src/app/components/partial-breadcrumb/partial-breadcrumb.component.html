@@ -1,0 +1,12 @@
+<div class="breadcrumb" *ngIf="enabled">
+    <ul class="layer">
+        <li *ngFor="let item of data.itens"
+            class="item {{ item.style }}" 
+            [class.active]="item.urlList.indexOf(current) > -1"
+            [class.completed]="item.completed"
+        >
+            <span class="text">{{ item.text }}</span>
+        </li>
+    </ul>
+    <div class="separator"></div> 
+</div>

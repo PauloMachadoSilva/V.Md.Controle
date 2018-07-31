@@ -1,0 +1,41 @@
+<div class="sidebar-header -mobile" (click)="openSidebar()">
+    <div class="logo"></div>
+    <span>{{ plan.complement.internetValue }}</span>
+    <span>R${{plan.price}}</span>
+    <div class="details"></div>
+</div>
+<div class="sidebar-content" >
+    <div class="sidebar-header">
+        <h1>Plano Escolhido</h1>
+        <p *ngIf="modalityName">{{ modalityName }}</p>
+        <div class="sidebar-info-plan">
+            <div class="plan-title">
+                <h4 class="text-center plan-title-text">{{ plan.complement.internetValue }}</h4>
+                <p class="text-center plan-subtitle-text">{{ plan.complement.internetDetail }}</p>
+            </div>
+            <div class="line"></div>
+            <p class="plan-info-featured">
+                <span class="text-center text-featured">{{ plan.description.calls.title }}</span>
+                <span class="text-center text-normal">{{ plan.description.calls.description }}</span>
+            </p>
+        </div>
+        <div class="plan-apps">
+            <p>Aplicativos inclusos</p>
+            <p class="apps">{{ plan.description?.sva?.description }}</p>
+        </div>
+    </div>
+
+    <div class="sidebar-footer">
+        <div class="plan-more-details">
+            <div class="plan-price">
+                <span class="plan-price-symbol">R$</span>
+                <span class="plan-price-real text-featured">{{plan.price.split(',')[0]}}</span>
+                <span class="plan-price-cents text-featured">,{{plan.price.split(',')[1]}}</span>
+                <span class="plan-price-text">/mês</span>
+            </div>
+            <ul class="items-more-details">
+                <li class="item-more-details" *ngFor='let value of detailList'>{{ value }}</li>
+            </ul>
+        </div>
+    </div>
+</div>

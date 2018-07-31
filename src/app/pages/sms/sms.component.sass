@@ -1,0 +1,57 @@
+@import '../../../assets/styles/tools/mixins'
+
+.content
+    &.-sms
+        .title
+            +mq('tablet','max')
+                margin: 0 auto 7px
+        .sub-title
+            width: 80%
+        > .group-resend
+            position: relative
+            display: flex
+            font-size: 14px
+            margin-top: 60px
+            +mq('tablet','max')
+                flex-direction: column
+            > .resend-text
+                display: inline-block
+                line-height: normal
+                width: 250px
+                +mq('tablet','max')
+                    text-align: center
+                    width: 100%
+            > .arrow
+                background:  url('/assets/img/arrow.png') no-repeat
+                content: ''
+                height: 30px
+                width: 30px
+                +mq('tablet','max')
+                    background:  url('/assets/img/arrow-down.png') no-repeat
+                    margin: 10px auto 0
+
+            > .resend-btn
+                border-radius: 10px
+                border: 1px solid  #979797
+                color:  #979797
+                cursor: pointer
+                font-family: OfficinaSerifStd
+                font-size: 14px
+                text-align: center
+                padding: 10px 0
+                width: 191.9px
+                +mq('tablet','max')
+                    margin: 0 auto
+                    width: 100%
+                &:disabled
+                    cursor: not-allowed
+
+            > .resend-code-wait
+                bottom: -57px
+                position: absolute
+                right: 33px
+                text-align: center
+                width: 180px
+                span
+                    display: block
+                    font-weight: bold

@@ -1,0 +1,462 @@
+.form
+    margin-top: 30px
+    & > wza-select
+        margin-bottom: 10px
+        display: block
+        float: none
+
+    *
+        transition: opacity 0.7s ease
+
+        &.hidden
+            height: 0
+            opacity: 0
+            visibility: hidden
+
+.field-group
+    display: block
+    font-family: "Oxygen-Regular", sans-serif
+    overflow: hidden
+    opacity: 1
+
+    &.-half
+        overflow: visible
+        +mq('tablet','max')
+            overflow: hidden
+        .input-field
+            display: inline-block
+            float: left
+            width: 50%
+            padding-right: 10px
+            +mq('tablet','max')
+                display: block
+                width: 100%
+
+    &.-radio
+        overflow: visible
+        margin-top: 33px
+
+    .ng-invalid.errorenabled
+        &.ng-dirty
+            border-color: red !important
+            color: red
+
+    .input-field
+        display: block
+        font-size: 16px
+        height: 46px
+        line-height: inherit
+        margin-top: 10px
+        position: relative
+        width: 100%
+        padding-right: 10px
+        +mq('tablet', 'max')
+            font-size: 12px
+            padding: 0
+            width: 100%
+
+        .validation-icons
+            display: none
+            height: 16px
+            position: absolute
+            right: 8px
+            top: 10px
+            width: 16px
+            +mq('tablet','max')
+                right: 0
+            &.valid
+                display: block
+                background: url('/assets/img/check-ok.png')
+                background-size: cover
+            &.error
+                display: block
+                background: url('/assets/img/error.png')
+                background-size: cover
+                top: 7px
+
+
+        > .radio-group
+            height: 50px
+            +mq('tablet', 'max')
+                float: left
+                height: 65px
+                margin-right: 5px
+
+            >.radio-button
+                display: none
+
+            >label
+                display: inline-block
+                //font-family: $fonte-normal
+                font-size: 12px
+                margin: 9px 5px
+                position: relative
+                cursor: pointer
+                +mq('tablet','max')
+                    margin: 9px 0
+                &:before
+                    border-radius: 12px
+                    border: 1px solid #979797
+                    content: ''
+                    display: inline-block
+                    height: 20px
+                    margin-right: 5px
+                    transform: translateY(5px)
+                    width: 20px
+                &:after
+                    background: #660099
+                    border-radius: 10px
+                    border: 0
+                    content: ''
+                    display: none
+                    height: 10px
+                    left: 7px
+                    position: absolute
+                    top: 12px
+                    width: 10px
+                    z-index: 100000001
+
+            .radio-button:checked + label
+                &:before
+                    border: 2px solid #660099
+                &:after
+                    display: inline-block
+
+        > .checkbox-group
+            margin-top: 30px
+            +mq('tablet', 'max')
+                float: left
+                margin: 32px 0 5px 0
+
+            >.checkbox-button
+                display: none
+
+            > label
+                color: #9b9b9b
+                display: inline-block
+                //font-family: $fonte-normal
+                font-size: 12px
+                margin: -8px 5px
+                position: relative
+                cursor: pointer
+                > a
+                    color: #660099
+                &:before
+                    border: 2px solid #670097
+                    content: ''
+                    display: inline-block
+                    float: left
+                    height: 15px
+                    margin-right: 10px
+                    transform: translateY(5px)
+                    width: 15px
+                &:after
+                    background: url(/assets/img/check.png) center center no-repeat
+                    background-size: 100%
+                    border: 0
+                    content: ''
+                    display: none
+                    height: 17px
+                    left: 3px
+                    position: absolute
+                    top: 2px
+                    width: 20px
+                    z-index: 100000001
+
+            .checkbox-button:checked + label
+                &:after
+                    display: inline-block
+
+        .label
+            -webkit-font-smoothing: antialiased
+            color: #4a4a4a
+            cursor: text
+            font-size: 12px
+            position: absolute
+            top: -10px
+            transition: all .5s
+            width: 100%
+            z-index: 1
+            &.error
+                color: red
+
+        .field
+            background-color: transparent
+            border-bottom: 1px solid #979797
+            border-left: none
+            border-right: none
+            border-top: none
+            display: inherit
+            font-size: 16px
+            font-weight: bold
+            height: 30px
+            line-height: inherit
+            outline: 0
+            padding-right: 18px
+            position: relative
+            transition: border .5s
+            width: 100%
+            z-index: 101
+            &::-ms-clear 
+                display: none
+
+
+        .btn-submit
+            background-color: #a3d143
+            border-radius: 4px
+            border: none
+            color: #FFF
+            cursor: pointer
+            font-size: 16px
+            font-weight: 300
+            height: 46px
+            letter-spacing: -0.2px
+            line-height: 0.88
+            outline: none
+            text-align: center
+            transition: transform .5s
+            width: 100%
+            &.-sms
+                display: block
+                width: 50%
+                margin-left: 25%
+                +mq('tablet','max')
+                    margin: 0
+                    width: 100%
+            &[disabled]
+                opacity: .5
+
+        .spinner
+            .progress-bar
+                height: 2px               
+                overflow: hidden
+                position: absolute
+                top: 29px
+                width: 90%
+                z-index: 101
+
+                .line
+                    animation-direction: alternate
+                    animation-duration: 2s
+                    animation-iteration-count: infinite
+                    animation-name: loader
+                    background-color: #670097
+                    height: 2px
+                    left: 0
+                    position: relative
+                    width: 0
+
+        .error
+            color: red
+            font-size: 12px
+            transition: opacity .5s
+
+        .observation
+            color: inherit
+            font-size: 12px
+            margin: 4px 0 0 0
+
+        &.-icon
+            padding-left: 40px
+
+            &:before
+                content: ''
+                display: inline-block
+                height: 100%
+                left: 0px
+                position: absolute
+                text-align: left
+                top: 0
+
+        &.-medium
+            width: 30%
+
+        &.-bigger
+            width: 70%
+
+        &::after
+            bottom: 20px
+            display: block
+            position: absolute
+            right: 5px
+
+        &.-valid
+            &::after
+               // content: url(../../assets/imgs/valid.png)
+
+        &.-invalid
+            color: #bc0008
+
+            *
+                color: inherit
+
+            &::after
+               // content: url(../../assets/imgs/invalid.png)
+            .error
+                display: block
+            input
+                border-bottom-color: #bc0008
+            .label
+                font-size: 10px
+                top: -10px
+
+        &.-down
+            .label
+                font-size: 16px
+                font-weight: bold
+                top: 5px
+                transition: all .5s
+                // z-index: -1
+
+        &.-cep:before
+            background-image: url('/assets/img/icon-home.png')
+            background-repeat: no-repeat
+            content: ''
+            display: block
+            height: 25px
+            position: absolute
+            width: 25px
+
+        &.-cepSearch:before
+            background-image: url('/assets/img/cep-busca.png')
+            background-repeat: no-repeat
+            content: ''
+            display: block
+            height: 25px
+            position: absolute
+            width: 31px
+
+        &.-maturity:before
+            background-image: url('/assets/img/agenda.png')
+            background-repeat: no-repeat
+            content: ''
+            display: block
+            height: 25px
+            position: absolute
+            top: -10px
+            width: 25px
+
+        &.-account-type:before
+            background-image: url('/assets/img/agenda.png')
+            background-repeat: no-repeat
+            content: ''
+            display: block
+            height: 25px
+            position: absolute
+            top: -10px
+            width: 25px
+
+        &.-cpf:before
+            background-image: url('/assets/img/cpf.png')
+            background-repeat: no-repeat
+            content: ''
+            display: block
+            height: 25px
+            position: absolute
+            width: 32px
+            //icone de cpf
+
+        &.-email:before
+            background-image: url('/assets/img/e-mail.png')
+            background-repeat: no-repeat
+            background-size: cover
+            content: ''
+            display: block
+            height: 25px
+            position: absolute
+            width: 32px
+
+        &.-complement
+            +mq('tablet','max')
+                margin-left: 40px
+
+        &.-token
+            width: 50%
+            overflow: visible
+            left: 25%
+            +mq('tablet', 'max')
+                width: 80%
+                overflow: visible
+                left: 17%
+
+        &.-tel
+            margin-top: 0
+            &:before
+                background-image: url('/assets/img/cellphone.png')
+                background-repeat: no-repeat
+                background-position: center
+                content: ''
+                display: block
+                height: 25px
+                position: absolute
+                top: 16px
+                width: 32px
+                +mq('tablet','max')
+                    top: -1px
+        &.-searchCep:before
+            //+icon-search-cep
+
+        &.-focus, &.-focusAux
+            > .label
+                font-size: 12px
+                top: -12px
+        &.-submit
+            +mq('tablet','max')
+                margin-left: 0
+        &.-term
+            +mq('tablet','max')
+                margin-left: 0px
+            > input[type="checkbox"]
+                display: none
+                height: 0
+                outline: none
+                position: relative
+                width: 0
+
+            > input[type=checkbox]:checked + label
+                &:before
+                    background-size: 100%
+                //    background: url('/assets/svgs/sucess-thin.svg') center center no-repeat
+                    content: ''
+                    display: inline-block
+                    height: 10px
+                    left: 3px
+                    position: absolute
+                    top: 7px
+                    width: 15px
+
+            > input[type="checkbox"] + label
+                position: relative
+                &:after
+                    border: 1px solid blue
+                    content: ''
+                    display: inline-block
+                    height: 20px
+                    width: 20px
+
+            > label
+                display: inline-block
+                float: left
+                margin-right: 15px
+
+            > .term-fake-label
+                display: inline-block
+                float: left
+                width: 80%
+
+                > .term-description
+                    display: block
+                    font-size: 12px
+                    font-weight: 300
+                    line-height: 12px
+
+                    .link
+                        display: block
+                        margin: 0
+                        padding: 0
+
+                > .term-note
+                    display: block
+                    font-size: 12px
+                    line-height: 12px
+                    margin-top: 12px

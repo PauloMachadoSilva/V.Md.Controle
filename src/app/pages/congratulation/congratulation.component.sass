@@ -1,0 +1,204 @@
+@import 'src/assets/styles/tools/mixins'
+
+.title
+    &-parabens
+        width: 100%        
+
+.separator
+    width: 100%
+    height: 2px
+    border: solid 1px #979797
+
+.happens-now
+    width: 100%
+    margin-top: 10px  
+
+.happens-now-text
+    font-family: OfficinaSerifStd
+    font-size: 15px
+    font-weight: normal
+    font-style: normal
+    font-stretch: normal
+    line-height: 1.07
+    letter-spacing: normal
+    text-align: justify
+    color: #4a4a4a
+
+.breadcrumb-steps
+    &1
+       
+    &2
+        height: 140px
+        background-image: url('../../../assets/img/group-5-steps.png')
+        background-repeat: no-repeat
+        +mq('tablet','max')
+            height: 425px
+            background-image: url('../../../assets/img/group-5-vertical-steps.png')          
+            
+    &3
+        background-image: url('../../../assets/img/group-4-steps.png')
+        background-repeat: no-repeat
+        +mq("tablet", "max")
+            height: 330px
+            background-image: url('../../../assets/img/group-4-vertical-steps.png')
+
+.breadcrumbs-date-container
+    +mq("tablet", "max")
+        background-position: center top
+        border: 1px solid #fff
+        position: relative
+        width: 350px
+        margin: 0 auto
+        left: -58px
+        > .date-list
+            margin-left: 250px
+            margin-top: 21px
+            > li
+                list-style: none
+                margin: 0 0 58px 0
+                padding: 0
+                font-family: OfficinaSerifStd
+                font-size: 12px
+                letter-spacing: normal
+                text-align: justify
+                color: #4a4a4a     
+
+    +mq("tablet", "min")
+        margin: 20px 0
+        max-width: 500px
+        overflow: hidden
+        > .date-list
+            width: 600px
+            > li
+                margin-top: 106px
+                display: inline-block
+                font-family: OfficinaSerifStd
+                font-size: 12px
+                letter-spacing: normal
+                text-align: justify
+                color: #4a4a4a     
+                margin-right: 12px           
+                width: 98px
+        &.breadcrumb-steps3
+            width: 400px
+            margin: 20px auto            
+
+.container-congratulation-importante
+    width: 100%
+    height: 52px
+    margin-top: 10px
+
+.text-congratulation-importante
+    font-family: OfficinaSerifStd
+    font-size: 13px
+    line-height: 1.08
+    text-align: justify
+    color: #4a4a4a
+    letter-spacing: normal
+
+    > .click-here
+        font-weight: bold
+        color: #660099
+
+.border-btn-submit 
+    width: 100%
+    height: 100%
+    border-radius: 5px
+    border-style: solid
+    border-width: 2px
+    border-color: #962b91
+    margin-top: 10px
+    // +mq("tablet", "max")
+        // margin-top: -100px
+
+.btn-submit
+    background-color: #a3d143
+    border-radius: 5px
+    border: none
+    color: #FFF
+    cursor: pointer
+    font-size: 16px
+    font-weight: 300
+    height: 35px
+    letter-spacing: -0.2px
+    line-height: 0.88
+    outline: none
+    text-align: center
+    transition: transform .5s
+    width: 169px
+    margin: 0 auto
+    display: block
+    top: -20px
+    position: relative
+    &[disabled]
+        opacity: .5
+
+#order-box-separator
+    margin-left: 4%
+    width: 90%
+    height: 1px
+    background-color: #660099 
+ 
+#order-code-box
+    width: 100%
+    text-align: center
+    margin: 4px 0px
+
+    #order-code
+        font-family: OfficinaSerifStd
+        font-size: 16px
+        font-weight: normal
+        font-style: normal
+        font-stretch: normal
+        line-height: normal
+        letter-spacing: normal
+        text-align: left
+        color: #4a4a4a
+        #order-code-number
+            font-weight: bold
+
+.order-details-block-left
+    list-style-type: none
+    display: inline-block
+   
+.order-details-block-right
+    list-style-type: none
+    display: inline-block
+    position: relative
+    top: -19px
+
+.order-details-titles
+    display: block
+    font-family: OfficinaSerifStd
+    font-size: 12px
+    font-weight: normal
+    font-style: normal
+    font-stretch: normal
+    line-height: 1.17
+    letter-spacing: normal
+    text-align: left
+    color: #4a4a4a
+    margin-left: 20px
+    margin-top: 8px
+    
+.order-details-data
+    font-family: OfficinaSerifStd
+    font-size: 14px
+    font-weight: bold    
+    line-height: 1    
+    text-align: left
+    color: #4a4a4a    
+    margin-left: 20px
+
+#due-date
+    display: inline-block
+    font-family: OfficinaSerifStd
+    font-size: 12px   
+    line-height: 1.17
+    letter-spacing: normal
+    text-align: left
+    color: #4a4a4a
+    margin-left: 20px    
+    margin-bottom: 20px
+
+

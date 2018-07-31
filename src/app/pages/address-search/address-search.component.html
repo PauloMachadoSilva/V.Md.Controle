@@ -1,0 +1,37 @@
+<div class="content -search">
+
+    <h2>{{ clientName }}, </h2>
+    <p>Digite abaixo o seu endereço para buscar o número do seu CEP.</p>
+
+    <form [formGroup]="addressSearchForm" class="form">
+        <wza-input
+            type="text"
+            label="Seu Endereço"
+            class="-icon -cepSearch"
+            placeholder="Digite o seu Endereço"
+            [field]="addressSearchForm.controls['address']"
+            (keyup)="onKeyup()"
+            maxLength="50"
+            minLength="4"
+        ></wza-input>
+    </form>
+
+    <div class="search-result" *ngIf="addressList">
+            <span> Selecione o número do seu CEP na lista encontrada</span>
+        <ul class="list-result">
+            <li *ngFor="let address of addressList" class="iten-result">
+                <div class="street-containt">
+                    <p>{{ address.patio }} {{address.street}},</p>
+                    <p>{{address.neighborhood}} | {{address.city}},{{address.state}}</p>
+                    <p>CEP {{address.cep}}</p>
+                </div>
+                <div class="select-street">
+                    <a routerLink="/endereco" [queryParams]="{ cep: address.cep }" class="link">Selecionar</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <a routerLink="/endereco" class="link prev"> Voltar</a>
+
+    <form-debug [element]="addressSearchForm"></form-debug>
+</div>

@@ -1,0 +1,96 @@
+<div class="content -personal">
+    <h2 class="title">Olá! Preencha seus dados.</h2>
+    <p class="sub-title">Em instantes você terá seu Vivo Controle 2GB</p>
+
+    <form [formGroup]="personalDataForm" (ngSubmit)="onSubmit()" class="form">
+        <wza-input
+            type="text"
+            label="Seu e-mail"
+            class=" -icon -email"
+            placeholder="Digite o seu e-mail"
+            [field]="personalDataForm.controls['email']"
+            (keyup)="saveCartFromEmail(false)"
+            (blur)="saveCartFromEmail(true)"
+            maxLength="150"
+        ></wza-input>
+
+        <div class="field-group" [class.hidden]="!personalDataForm.field('email').valid">
+            <div class="input-field -icon -tel">
+                <div class="radio-group">
+                    <span class="modality">Deseja manter seu número atual?</span>
+                    <input type="radio" id="portabilityMigration"  value="yes" formControlName="modality"  class="radio-button" (change)="updateAnalytics('modality')">
+                     <label for="portabilityMigration">Sim</label>
+
+                    <input type="radio" id="newLine"  value="no" formControlName="modality" class="radio-button" (change)="updateAnalytics('modality')">
+                     <label for="newLine">Não</label>
+                </div>
+            </div>
+        </div>
+
+        <wza-input
+            type="text"
+            class=" -icon "
+            maxLength="15"
+            [label]="
+                personalDataForm.controls['modality'].value == 'yes'
+                    ? 'Número Atual'
+                    : 'Número de contato'
+                "
+            [placeholder]="
+                personalDataForm.controls['modality'].value == 'yes'
+                    ? 'Digite o seu número Atual'
+                    : 'Telefone de contato'
+                "
+            [field]="personalDataForm.controls['cellPhone']"
+            (keyup)="updateAnalytics('cellPhone')"
+            (blur)="updateAnalytics('cellPhone', true)"
+            [groupClass]="!personalDataForm.field('email').valid ? 'hidden' : ''"
+        ></wza-input>
+
+        <wza-input
+            type="text"
+            label="Seu CPF"
+            placeholder="Digite seu CPF"
+            [field]="personalDataForm.controls['cpf']"
+            (keyup)="updateDataByCPF()"
+            class=" -icon -cpf"
+            [groupClass]="!personalDataForm.field('cellPhone').valid || !personalDataForm.field('email').valid ? 'hidden' : ''"
+            maxLength="14"
+        ></wza-input>
+
+        <wza-input
+            type="text"
+            label="Seu nome"
+            placeholder="Digite seu nome"
+            [field]="personalDataForm.controls['name']"
+            class=" -icon "
+            (keyup)="updateAnalytics('name')"
+            [groupClass]="personalDataForm.field('name').readonly || !personalDataForm.field('cpf').valid ? 'hidden' : ''"
+            maxLength="250"
+        ></wza-input>
+
+        <wza-input
+            type="text"
+            label="Nome da mãe"
+            placeholder="Digite o nome de sua mãe"
+            [field]="personalDataForm.controls['motherName']"
+            (keyup)="updateAnalytics('motherName')"
+            class=" -icon "
+            [groupClass]="personalDataForm.field('motherName').readonly || !personalDataForm.field('cpf').valid ? 'hidden' : ''"
+            maxLength="250"
+        ></wza-input>
+
+        <wza-input
+            type="text"
+            label="Data de nascimento"
+            placeholder="dd/mm/aaaa"
+            [field]="personalDataForm.controls['birth']"
+            (keyup)="updateAnalytics('birth')"
+            class=" -icon "
+            [groupClass]="personalDataForm.field('birth').readonly || !personalDataForm.field('cpf').valid ? 'hidden' : ''"
+            maxLength="10"
+        ></wza-input>
+    </form>
+</div>
+
+<form-debug [element]="personalDataForm"></form-debug>

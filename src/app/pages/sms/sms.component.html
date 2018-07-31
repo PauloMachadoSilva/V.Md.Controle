@@ -1,0 +1,35 @@
+<div class="content -sms">
+    <h2 class="title">{{ clientName }}, </h2>
+    <p class="sub-title">Enviamos um torpedo SMS para o seu número <strong>{{ phoneNumber }}.</strong> Verifique em seu celular o <strong>Código de Segurança</strong> que enviamos.</p>
+
+    <form [formGroup]="smsForm" (submit)="onSubmit()" class="form">
+        <wza-input
+            type="text"
+            label="Código SMS"
+            class="-token"
+            placeholder="XXXX"
+            [field]="smsForm.controls['sms']"
+            maxLength="4"
+            minLength="4"
+        ></wza-input>
+
+        <div class="field-group">
+            <div class="input-field">
+                <button type="submit" [disabled]="!smsForm.valid || sending" class="btn-submit -sms">Confirmar</button>
+            </div>
+        </div>
+    </form>
+
+    <div class="group-resend">
+        <div class="resend-text">
+            <p>Caso não tenha recebido o código via SMS, clique no botão ao lado para reenviar.</p>
+        </div>
+        <div class="arrow"></div>
+        <button  (click)="sendSmsAgain()" class="resend-btn" [disabled]="counterTimeout > 0 || sending">
+            <span> Reenviar código</span>
+        </button>
+        <div class="resend-code-wait" [hidden]="counterTimeout == 0">
+            Código enviado! <span>Aguarde {{ counterTimeout }}s </span>para uma nova tentativa
+        </div>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+{
+    "log": {
+        "global": false,
+        "form": false,
+        "spinner": false
+    },
+    "apiMockMode": false,
+    "apiTimeoutSimulation": 0,
+
+    "_documentation": [
+        "apiTimeoutSimulation: DEFAULT IS '0'. Value to simulate server wait timeout"
+    ]
+}

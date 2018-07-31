@@ -1,0 +1,6 @@
+{
+    "VALIDATION_NOT_FOUND": "VALIDATION NOT FOUNT: ",
+    "INVALID_PHONE_MUST_BE_STR": "Digite apenas números",
+    "INVALID_PHONE_MESSAGE": "Digite um telefone válido.",
+    "LABEL_EMAIL": "DEVERIA FUNCIONAR"
+}

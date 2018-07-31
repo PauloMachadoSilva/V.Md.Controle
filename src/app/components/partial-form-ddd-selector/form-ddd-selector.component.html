@@ -1,0 +1,23 @@
+<form class=" form form-ddd-selector" [formGroup]="dddForm" (ngSubmit)="onSubmit()">
+    <div class="field-state">
+        <wza-select
+            label="Estado"
+            [field]="dddForm.controls['uf']"
+            (change)="updateDDDList()" 
+        >
+        </wza-select>
+    </div>
+    <div class="field-ddd">
+        <wza-select 
+            label="DDD"
+            [field]="dddForm.controls['dddUf']"
+        >
+        </wza-select>
+    </div>
+    
+    <div class="form-wrapper">
+        <button class="button button-alternative -normal" type="submit" [disabled]="!dddForm.valid"><span class="icon-btn-select"></span>Selecionar</button>
+    </div>
+</form>
+
+<form-debug [element]="dddForm" type="form"></form-debug>

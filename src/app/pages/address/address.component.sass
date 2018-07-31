@@ -1,0 +1,64 @@
+@import '../../../assets/styles/tools/mixins'
+.content
+    &.-adress
+        .form
+            &.-address
+                margin-top: 14px
+                > .address-details
+                    margin: -10px 0 0 40px
+                    +mq('tablet','max')
+                        margin-left: 38px
+                .search-cep
+                    display: block
+                    font-weight: bold
+                    margin-left: 40%
+                    +mq('tablet','max')
+                        margin-left: 29%
+                .double
+                    height: 56px
+                    +mq('tablet','max')
+                        height: 100%
+
+                .extra-field
+                    overflow: hidden
+
+.field-group
+    .input-field
+        .label
+            -webkit-font-smoothing: antialiased
+            color: #4a4a4a
+            cursor: text
+            font-size: 12px
+            position: absolute
+            top: -10px
+            transition: all .5s
+            width: 100%
+            z-index: 1
+            &.error
+                color: red
+    &.-account-type
+        height: 115px
+        margin-top: 10px
+        .input-field
+            height: 37px
+            &.-term
+                height: 15px
+                margin: 0 0 0 30px
+                .checkbox-group
+                    margin: 0
+                    > label:before
+                        width: 10px
+                        height: 10px
+                        border-color: #9b9b9b
+                        margin-top: -8px
+                    > label:after
+                        width: 14px
+                        height: 16px
+                        margin-top: -8px
+            .radio-group
+                label
+                    font-size: 16px
+                    span
+                        font-size: 13px
+                        &.strong
+                            font-weight: bold

@@ -1,0 +1,28 @@
+<section class="faq faq__container" [class.oppenned]="faqView">
+    <button class="faq__button -chat" (click)="toggleModal()"><span>Dúvida</span></button>
+    
+    <div class="faq__content container-fluid">
+        <iframe class="iframe" src="/chat.html" *ngIf='faqView'></iframe>
+        
+        <!-- <uib-tabset active="faq.active">
+            <uib-tab class="tab--liveChat" *ngIf="hasLiveChat">
+                <uib-tab-heading (click)="openLiveChat()">
+                    <span>Fale com um Consultor</span>
+                </uib-tab-heading>
+                <live-chat *ngIf="hasLiveChat"></live-chat>
+            </uib-tab>
+            <uib-tab class="tab--faq" *ngIf="hasFaq">
+                <uib-tab-heading (click)="closeLiveChat()">
+                    <span>Qual a sua dúvida?</span>
+                </uib-tab-heading>
+                <questions *ngIf="hasFaq"></questions>
+            </uib-tab>
+            <uib-tab class="tab--akiva" *ngIf="hasAkiva">
+                <uib-tab-heading (click)="closeLiveChat()">
+                    <span>Me liga</span>
+                </uib-tab-heading>
+                <akiva *ngIf="hasAkiva"></akiva>
+            </uib-tab>
+        </uib-tabset> -->
+    </div>
+</section>

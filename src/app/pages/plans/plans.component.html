@@ -1,0 +1,16 @@
+<section class="section-plan">
+    <h2 class="text-center">Escolha seu plano ideal com Internet Giga 4G e muito mais!</h2>
+
+    <ngx-carousel [inputs]="carouselOne">
+        <ngx-item *ngFor="let plan of planList; let i = index" NgxCarouselItem>
+            <partial-plan-card class="plan-card-{{i}}" [plan]="plan" (send)="onSubmit($event)"></partial-plan-card>
+        </ngx-item>
+
+        <span NgxCarouselPrev></span>
+        <span NgxCarouselNext></span>
+    </ngx-carousel>
+
+    <!-- <ul class="list-plan plan-container">
+        <partial-plan-card *ngFor="let plan of planList; let i = index" class="plan-card-{{i}}" [plan]="plan" (send)="onSubmit($event)"></partial-plan-card>
+    </ul> -->
+</section>
